@@ -1,0 +1,1 @@
+cmd_/home/morrow/AppDev/repos/8821cu/8821cu.ko := ld -r -m elf_x86_64  -z max-page-size=0x200000  --build-id  -T ./scripts/module-common.lds -o /home/morrow/AppDev/repos/8821cu/8821cu.ko /home/morrow/AppDev/repos/8821cu/8821cu.o /home/morrow/AppDev/repos/8821cu/8821cu.mod.o;  true
