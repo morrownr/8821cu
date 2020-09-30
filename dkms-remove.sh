@@ -6,7 +6,6 @@ if [[ $EUID -ne 0 ]]; then
   exit 1
 fi
 
-DRV_DIR="$(pwd)"
 DRV_NAME=8821cu
 DRV_VERSION=5.8.1.4
 
