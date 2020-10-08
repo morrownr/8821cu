@@ -240,7 +240,7 @@ static const char *const glbt_info_src[] = {
 #define BTC_INFO_ACL_BUSY		BIT(3)
 #define BTC_INFO_INQ_PAGE		BIT(2)
 #define BTC_INFO_SCO_ESCO		BIT(1)
-#define BTC_INFO_CONNECTION		BIT(0)
+#define BTC_INFO_CONNECTION	BIT(0)
 
 #define BTC_BTINFO_LENGTH_MAX 10
 
