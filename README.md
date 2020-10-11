@@ -88,3 +88,41 @@ $ sudo ./dkms-remove.sh
 ```
 $ sudo reboot
 ```
+
+### iperf3 Test:
+
+```
+[ ID] Interval           Transfer     Bandwidth       Retr  Cwnd
+[  4]   0.00-1.00   sec  13.1 MBytes   109 Mbits/sec    0    351 KBytes
+[  4]   1.00-2.00   sec  13.0 MBytes   109 Mbits/sec    0    495 KBytes
+[  4]   2.00-3.00   sec  14.5 MBytes   121 Mbits/sec    0    619 KBytes
+[  4]   3.00-4.00   sec  13.7 MBytes   115 Mbits/sec    0    655 KBytes
+[  4]   4.00-5.00   sec  13.5 MBytes   113 Mbits/sec    0    655 KBytes
+[  4]   5.00-6.00   sec  13.4 MBytes   113 Mbits/sec    0    691 KBytes
+[  4]   6.00-7.00   sec  13.6 MBytes   114 Mbits/sec    0    691 KBytes
+[  4]   7.00-8.00   sec  13.4 MBytes   113 Mbits/sec    0    725 KBytes
+[  4]   8.00-9.00   sec  13.8 MBytes   115 Mbits/sec    0    762 KBytes
+[  4]   9.00-10.00  sec  13.2 MBytes   110 Mbits/sec    0    805 KBytes
+```
+
+### Ping Test:
+
+```
+64 bytes from 192.168.1.1: icmp_seq=58 ttl=64 time=2.88 ms
+64 bytes from 192.168.1.1: icmp_seq=59 ttl=64 time=3.00 ms
+64 bytes from 192.168.1.1: icmp_seq=60 ttl=64 time=2.89 ms
+64 bytes from 192.168.1.1: icmp_seq=61 ttl=64 time=3.12 ms
+64 bytes from 192.168.1.1: icmp_seq=62 ttl=64 time=2.91 ms
+64 bytes from 192.168.1.1: icmp_seq=63 ttl=64 time=2.95 ms
+64 bytes from 192.168.1.1: icmp_seq=64 ttl=64 time=3.05 ms
+64 bytes from 192.168.1.1: icmp_seq=65 ttl=64 time=2.78 ms
+64 bytes from 192.168.1.1: icmp_seq=66 ttl=64 time=2.86 ms
+64 bytes from 192.168.1.1: icmp_seq=67 ttl=64 time=2.83 ms
+64 bytes from 192.168.1.1: icmp_seq=68 ttl=64 time=2.98 ms
+64 bytes from 192.168.1.1: icmp_seq=69 ttl=64 time=3.02 ms
+```
+
+### Thoughts on the EDUP EP-1651 WiFi Adapter:
+
+This is a nano adapter and has impressed me with its ability to operate reliably through 3 walls, a total of about 40 feet. It runs cools and is highly reliable.
+
