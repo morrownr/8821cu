@@ -81,7 +81,7 @@ inline struct proc_dir_entry *rtw_proc_create_dir(const char *name, struct proc_
 }
 
 inline struct proc_dir_entry *rtw_proc_create_entry(const char *name, struct proc_dir_entry *parent,
-	const struct file_operations *fops, void * data)
+	const struct rtw_proc_ops *fops, void * data)
 {
 	struct proc_dir_entry *entry;
 
@@ -1614,9 +1614,9 @@ static int proc_get_ch_sel_policy(struct seq_file *m, void *v)
 	_adapter *adapter = (_adapter *)rtw_netdev_priv(dev);
 	struct rf_ctl_t *rfctl = adapter_to_rfctl(adapter);
 
-	RTW_PRINT_SEL(m, "%-16s\n", "same_band_prefer");
+	RTW_PRINT_SEL(m, "%-16s\n", "within_same_band");
 
-	RTW_PRINT_SEL(m, "%16u\n", rfctl->ch_sel_same_band_prefer);
+	RTW_PRINT_SEL(m, "%16d\n", rfctl->ch_sel_within_same_band);
 
 	return 0;
 }
@@ -1627,7 +1627,7 @@ static ssize_t proc_set_ch_sel_policy(struct file *file, const char __user *buff
 	_adapter *adapter = (_adapter *)rtw_netdev_priv(dev);
 	struct rf_ctl_t *rfctl = adapter_to_rfctl(adapter);
 	char tmp[32];
-	u8 sb_prefer;
+	u8 within_sb;
 	int num;
 
 	if (count < 1)
@@ -1641,9 +1641,9 @@ static ssize_t proc_set_ch_sel_policy(struct file *file, const char __user *buff
 	if (!buffer || copy_from_user(tmp, buffer, count))
 		goto exit;
 
-	num = sscanf(tmp, "%hhu", &sb_prefer);
+	num = sscanf(tmp, "%hhu", &within_sb);
 	if (num >=	1)
-		rfctl->ch_sel_same_band_prefer = sb_prefer;
+		rfctl->ch_sel_within_same_band = within_sb ? 1 : 0;
 
 exit:
 	return count;

@@ -948,7 +948,7 @@ struct rf_ctl_t {
 	#endif
 #endif
 
-	u8 ch_sel_same_band_prefer;
+	bool ch_sel_within_same_band;
 
 #ifdef CONFIG_DFS
 	u8 csa_ch;

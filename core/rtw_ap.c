@@ -4515,7 +4515,7 @@ static bool rtw_ap_choose_chbw(_adapter *adapter, u8 sel_ch, u8 max_bw, u8 cur_c
 						, ch, bw, offset
 						, RTW_CHF_2G | RTW_CHF_NON_DFS
 						, cur_ch
-						, rfctl->ch_sel_same_band_prefer, mesh_only);
+						, rfctl->ch_sel_within_same_band, mesh_only);
 			if (ch_avail == _TRUE) {
 				RTW_INFO("%s choose 5G DFS channel for debug\n", caller);
 				goto exit;
@@ -4529,7 +4529,7 @@ static bool rtw_ap_choose_chbw(_adapter *adapter, u8 sel_ch, u8 max_bw, u8 cur_c
 						, ch, bw, offset
 						, rfctl->dfs_ch_sel_d_flags
 						, cur_ch
-						, rfctl->ch_sel_same_band_prefer, mesh_only);
+						, ch_sel_within_same_band, mesh_only);
 			if (ch_avail == _TRUE) {
 				RTW_INFO("%s choose with dfs_ch_sel_d_flags:0x%02x for debug\n"
 					, caller, rfctl->dfs_ch_sel_d_flags);
@@ -4541,7 +4541,7 @@ static bool rtw_ap_choose_chbw(_adapter *adapter, u8 sel_ch, u8 max_bw, u8 cur_c
 					, ch, bw, offset
 					, 0
 					, cur_ch
-					, rfctl->ch_sel_same_band_prefer, mesh_only);
+					, rfctl->ch_sel_within_same_band, mesh_only);
 	} else
 #endif /* defined(CONFIG_DFS_MASTER) */
 	{
@@ -4549,7 +4549,7 @@ static bool rtw_ap_choose_chbw(_adapter *adapter, u8 sel_ch, u8 max_bw, u8 cur_c
 					, ch, bw, offset
 					, RTW_CHF_DFS
 					, cur_ch
-					, rfctl->ch_sel_same_band_prefer, mesh_only);
+					, rfctl->ch_sel_within_same_band, mesh_only);
 	}
 #if defined(CONFIG_DFS_MASTER)
 exit:

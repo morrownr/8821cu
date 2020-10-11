@@ -286,7 +286,7 @@ void rtw_rfctl_init(_adapter *adapter)
 	_rtw_init_listhead(&rfctl->txpwr_lmt_list);
 #endif
 
-	rfctl->ch_sel_same_band_prefer = 1;
+	rfctl->ch_sel_within_same_band = 1;
 
 #ifdef CONFIG_DFS_MASTER
 	rfctl->cac_start_time = rfctl->cac_end_time = RTW_CAC_STOPPED;
