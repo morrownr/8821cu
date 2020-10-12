@@ -1,15 +1,5 @@
 ### 8821cu ( 8821cu.ko )
 
-### Foreword:
-
-I am maintaining this driver because I needed to learn Github and spin
-back up to speed on C. This project accomplishes both of those goals. I
-had to dust off my old C books and I soon learned that wifi drivers are
-incredibly complicated. I can use your help. If you want to use, test,
-provide pull requests and make suggestions, that is all welcome. Also,
-if you find an updated version of the driver for these chipsets from
-Realtek, please let me know. Regards.
-
 ### Linux Driver for the RealTek RTL8811CU, RTL8821CU and RTL8731AU Chipsets.
 
 - Driver Version: v5.8.1.4_36409.20200313 (Realtek)
@@ -53,7 +43,7 @@ Realtek, please let me know. Regards.
 
 ### Thoughts on the EDUP EP-1651 WiFi Adapter:
 
-This is a nano adapter and has impressed me with its ability to operate reliably through 3 walls, a total of about 40 feet. It runs cools, is highly reliable and is low cost.
+This is a nano adapter that has impressed me with its ability to operate reliably through 3 walls, a total of about 40 feet. It runs cools, is highly reliable and is low cost.
 
 ### Supported Devices:
 
@@ -133,7 +123,7 @@ Transfer     Bandwidth       Retr  Cwnd
 
 ```
 
-### AP Mode (WiFi Hotspot Test:
+### AP Mode (WiFi Hotspot Test):
 
 - Tested good on Mint 19.3.
 
