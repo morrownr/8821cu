@@ -1,5 +1,15 @@
 ### 8821cu ( 8821cu.ko )
 
+### Foreword:
+
+I am maintaining this driver because I needed to learn Github and spin
+back up to speed on C. This project accomplishes both of those goals. I
+had to dust off my old C books and I soon learned that wifi drivers are
+incredibly complicated. I can use your help. If you want to use, test,
+provide pull requests and make suggestions, that is all welcome. Also,
+if you find an updated version of the driver for these chipsets from
+Realtek, please let me know. Regards.
+
 ### Linux Driver for the RealTek RTL8811CU, RTL8821CU and RTL8731AU Chipsets.
 
 - Driver Version: v5.8.1.4_36409.20200313 (Realtek)
@@ -26,24 +36,26 @@
 ### Supported Kernels:
 
 - Kernels: 2.6.24 ~ 5.3 (Realtek)
-- Tested on kernel 5.4
-- Tested on kernel 5.8
+- Kernel:  5.4 (support added and tested)
+- Kernel:  5.8 (support added and tested)
 
 ### Tested Linux Distributions:
 
 - Ubuntu 20.10 Beta
-- Mint 20 			( https://linuxmint.com/ )
-- Ubuntu 20.04 		( https://ubuntu.com/    )
+- Mint 20 			https://linuxmint.com/
+- Ubuntu 20.04 		https://ubuntu.com/
 - Mint 19.3
 - Ubuntu 18.04
 
 ### Tested Hardware:
 
-- EDUP EP-1651 WiFi Adapter 650Mbps USB 2.0
-  ( https://www.amazon.com/gp/product/B0872VF2D8 )
+- EDUP EP-1651 WiFi Adapter 650Mbps USB 2.0:  https://www.amazon.com/gp/product/B0872VF2D8
 
+### Thoughts on the EDUP EP-1651 WiFi Adapter:
 
-## Supported Devices:
+This is a nano adapter and has impressed me with its ability to operate reliably through 3 walls, a total of about 40 feet. It runs cools, is highly reliable and is low cost.
+
+### Supported Devices:
 
 * EDUP EP-1651
 * Numerous additional products that are based on the supported chipsets
@@ -92,37 +104,90 @@ $ sudo reboot
 ### iperf3 Test:
 
 ```
-[ ID] Interval           Transfer     Bandwidth       Retr  Cwnd
-[  4]   0.00-1.00   sec  13.1 MBytes   109 Mbits/sec    0    351 KBytes
-[  4]   1.00-2.00   sec  13.0 MBytes   109 Mbits/sec    0    495 KBytes
-[  4]   2.00-3.00   sec  14.5 MBytes   121 Mbits/sec    0    619 KBytes
-[  4]   3.00-4.00   sec  13.7 MBytes   115 Mbits/sec    0    655 KBytes
-[  4]   4.00-5.00   sec  13.5 MBytes   113 Mbits/sec    0    655 KBytes
-[  4]   5.00-6.00   sec  13.4 MBytes   113 Mbits/sec    0    691 KBytes
-[  4]   6.00-7.00   sec  13.6 MBytes   114 Mbits/sec    0    691 KBytes
-[  4]   7.00-8.00   sec  13.4 MBytes   113 Mbits/sec    0    725 KBytes
-[  4]   8.00-9.00   sec  13.8 MBytes   115 Mbits/sec    0    762 KBytes
-[  4]   9.00-10.00  sec  13.2 MBytes   110 Mbits/sec    0    805 KBytes
+Transfer     Bandwidth       Retr  Cwnd
+13.1 MBytes   109 Mbits/sec    0    351 KBytes
+13.0 MBytes   109 Mbits/sec    0    495 KBytes
+14.5 MBytes   121 Mbits/sec    0    619 KBytes
+13.7 MBytes   115 Mbits/sec    0    655 KBytes
+13.5 MBytes   113 Mbits/sec    0    655 KBytes
+13.4 MBytes   113 Mbits/sec    0    691 KBytes
+13.6 MBytes   114 Mbits/sec    0    691 KBytes
+13.4 MBytes   113 Mbits/sec    0    725 KBytes
+13.8 MBytes   115 Mbits/sec    0    762 KBytes
+13.2 MBytes   110 Mbits/sec    0    805 KBytes
 ```
 
 ### Ping Test:
 
 ```
-64 bytes from 192.168.1.1: icmp_seq=58 ttl=64 time=2.88 ms
-64 bytes from 192.168.1.1: icmp_seq=59 ttl=64 time=3.00 ms
-64 bytes from 192.168.1.1: icmp_seq=60 ttl=64 time=2.89 ms
-64 bytes from 192.168.1.1: icmp_seq=61 ttl=64 time=3.12 ms
-64 bytes from 192.168.1.1: icmp_seq=62 ttl=64 time=2.91 ms
-64 bytes from 192.168.1.1: icmp_seq=63 ttl=64 time=2.95 ms
-64 bytes from 192.168.1.1: icmp_seq=64 ttl=64 time=3.05 ms
-64 bytes from 192.168.1.1: icmp_seq=65 ttl=64 time=2.78 ms
-64 bytes from 192.168.1.1: icmp_seq=66 ttl=64 time=2.86 ms
-64 bytes from 192.168.1.1: icmp_seq=67 ttl=64 time=2.83 ms
-64 bytes from 192.168.1.1: icmp_seq=68 ttl=64 time=2.98 ms
-64 bytes from 192.168.1.1: icmp_seq=69 ttl=64 time=3.02 ms
+64 bytes : icmp_seq=58 ttl=64 time=2.88 ms
+64 bytes : icmp_seq=59 ttl=64 time=3.00 ms
+64 bytes : icmp_seq=60 ttl=64 time=2.89 ms
+64 bytes : icmp_seq=61 ttl=64 time=3.12 ms
+64 bytes : icmp_seq=62 ttl=64 time=2.91 ms
+64 bytes : icmp_seq=63 ttl=64 time=2.95 ms
+64 bytes : icmp_seq=64 ttl=64 time=3.05 ms
+64 bytes : icmp_seq=65 ttl=64 time=2.78 ms
+64 bytes : icmp_seq=66 ttl=64 time=2.86 ms
+64 bytes : icmp_seq=67 ttl=64 time=2.83 ms
+
 ```
 
-### Thoughts on the EDUP EP-1651 WiFi Adapter:
+### AP Mode (WiFi Hotspot Test:
 
-This is a nano adapter and has impressed me with its ability to operate reliably through 3 walls, a total of about 40 feet. It runs cools and is highly reliable.
+- Tested good on Mint 19.3.
+
+### Monitor Mode:
+
+- Tested good on Mint 19.3
+
+### Entering Monitor Mode with 'iw' and 'ip':
+Start by making sure the system recognizes the Wi-Fi interface:
+```
+$ sudo iw dev
+```
+
+The output shows the Wi-Fi interface name and the current mode among other things. The interface name will be something like `wlx00c0cafre8ba` and is required for the below commands. I will use `wlan0` as the interface name but you need to substitute your interface name.
+
+Take the interface down:
+```
+$ sudo ip link set wlan0 down
+```
+
+Set monitor mode:
+```
+$ sudo iw wlan0 set monitor control
+```
+
+Bring the interface up:
+```
+$ sudo ip link set wlan0 up
+```
+
+Verify the mode has changed:
+```
+$ sudo iw dev
+```
+
+### Reverting to Managed Mode with 'iw' and 'ip':
+
+Take the interface down:
+```
+$ sudo ip link set wlan0 down
+```
+
+Set managed mode:
+```
+$ sudo iw wlan0 set type managed
+```
+
+Bring the interface up:
+```
+$ sudo ip link set wlan0 up
+```
+
+Verify the mode has changed:
+```
+$ sudo iw dev
+```
 

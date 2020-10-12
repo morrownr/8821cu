@@ -1616,7 +1616,7 @@ static int proc_get_ch_sel_policy(struct seq_file *m, void *v)
 
 	RTW_PRINT_SEL(m, "%-16s\n", "within_same_band");
 
-	RTW_PRINT_SEL(m, "%16d\n", rfctl->ch_sel_within_same_band);
+	RTW_PRINT_SEL(m, "%16u\n", rfctl->ch_sel_within_same_band);
 
 	return 0;
 }
