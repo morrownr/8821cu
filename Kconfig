@@ -2,5 +2,5 @@ config RTL8821CU
 	tristate "Realtek 8821C USB WiFi"
 	depends on USB
 	help
-	  Help message of RTL8821CU
+	  Help message for RTL8821CU
 

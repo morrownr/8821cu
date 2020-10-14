@@ -5657,7 +5657,7 @@ phy_get_tx_power_final_absolute_value(_adapter *adapter, u8 rfpath, u8 rate,
 	struct hal_spec_t *hal_spec = GET_HAL_SPEC(adapter);
 	RATE_SECTION rs = mgn_rate_to_rs(rate);
 	BAND_TYPE band = cch <= 14 ? BAND_ON_2_4G : BAND_ON_5G;
-	s8 val; 
+	s8 val;
 
 	val = phy_get_txpwr_target(adapter, rfpath
 		, rs, rate, phy_get_current_tx_num(adapter, rate), bw, band, cch, NULL);
