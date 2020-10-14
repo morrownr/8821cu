@@ -3,7 +3,7 @@
 ### Linux Driver for the RealTek RTL8811CU, RTL8821CU and RTL8731AU Chipsets.
 
 - Driver Version: v5.8.1.4_36409.20200313 (Realtek)
-- Updates from the Linux community
+- Plus numerous updates from the Linux community
 
 ### Supported Features:
 
@@ -26,14 +26,18 @@
 ### Supported Kernels:
 
 - Kernels: 2.6.24 ~ 5.3 (Realtek)
-- Kernel:  5.4 (support added and tested)
-- Kernel:  5.8 (support added and tested)
+- Kernel 5.8
+
+### Supported Linux Distributions:
+
+- Ubuntu - https://linuxmint.com/
+- Mint - https://ubuntu.com/
 
 ### Tested Linux Distributions:
 
 - Ubuntu 20.10 Beta
-- Mint 20 			https://linuxmint.com/
-- Ubuntu 20.04 		https://ubuntu.com/
+- Mint 20
+- Ubuntu 20.04
 - Mint 19.3
 - Ubuntu 18.04
 
@@ -56,25 +60,38 @@ This driver can be installed using DKMS. DKMS is a system utility which will aut
 $ sudo apt-get install dkms
 ```
 
+Note: The installation of `dkms` in Mint or Ubuntu will result in the installation of the various development tools and required headers, if not previously installed, so no addition action is necessary on these distros.
+
 ### Installation of the Driver:
 
 Note: The installation instructions I am providing are for the novice user. Experienced users are welcome to alter the installation to meet their needs.
 
-Go to `https://github.com/morrownr/8821cu` for the latest version of the driver.
+Note: The quick way to open a terminal in Mint or Ubuntu: Ctrl+Alt+T (hold down on the Ctrl and Alt keys then press the T key.)
+
+Note: My technique is to create a folder in my home directory to hold source packages. I call it `src`.
+
+Create a folder to hold the downloaded driver file by first opening a terminal (Ctrl+Alt+T).
+
+In the terminal, create the folder to hold the driver file:
+```
+$ mkdir src
+```
+
+Get the latest version of the driver from: `https://github.com/morrownr/88x2bu`
 
 Download the driver by clicking on the green `Code` button.
 
-Click on `Download ZIP` and save `8821cu-master.zip` in your `Downloads` folder.
+Click on `Download ZIP` and save `8821cu-master.zip` in your `src` folder.
 
 Upzip `8821cu-master.zip`. A folder called `8821cu-master` should be created.
 
 Open a terminal and enter the folder called `8821cu-master`:
 
 ```
-$ cd ~/Downloads/8821cu-master
+$ cd ~/src/8821cu-master
 ```
 
-Execute the following command:
+Execute the following commands:
 ```
 $ sudo ./dkms-install.sh
 ```
@@ -83,7 +100,7 @@ $ sudo reboot
 ```
 ### Removal of the Driver:
 
-Open a terminal in the directory with the source code and execute the following command:
+Open a terminal in the directory with the source code and execute the following commands:
 ```
 $ sudo ./dkms-remove.sh
 ```
@@ -181,3 +198,4 @@ Verify the mode has changed:
 $ sudo iw dev
 ```
 
+### Enjoy
