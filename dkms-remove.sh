@@ -6,7 +6,7 @@ if [[ $EUID -ne 0 ]]; then
   exit 1
 fi
 
-DRV_NAME=8821cu
+DRV_NAME=rtl8821cu
 DRV_VERSION=5.8.1.4
 
 dkms remove ${DRV_NAME}/${DRV_VERSION} --all

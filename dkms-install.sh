@@ -16,7 +16,7 @@ else
 	exit 1
 fi
 
-DRV_NAME=8821cu
+DRV_NAME=rtl8821cu
 DRV_VERSION=5.8.1.4
 
 echo ""
