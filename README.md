@@ -26,7 +26,7 @@
 ### Supported Kernels:
 
 - Kernels: 2.6.24 ~ 5.3 (Realtek)
-- Kernels: 5.4 - 5.8
+- Kernels: 5.4 - 5.9
 
 ### Supported Linux Distributions:
 
@@ -111,33 +111,17 @@ $ sudo reboot
 ### iperf3 Test:
 
 ```
-Transfer     Bandwidth       Retr  Cwnd
-13.1 MBytes   109 Mbits/sec    0    351 KBytes
-13.0 MBytes   109 Mbits/sec    0    495 KBytes
-14.5 MBytes   121 Mbits/sec    0    619 KBytes
-13.7 MBytes   115 Mbits/sec    0    655 KBytes
-13.5 MBytes   113 Mbits/sec    0    655 KBytes
-13.4 MBytes   113 Mbits/sec    0    691 KBytes
-13.6 MBytes   114 Mbits/sec    0    691 KBytes
-13.4 MBytes   113 Mbits/sec    0    725 KBytes
-13.8 MBytes   115 Mbits/sec    0    762 KBytes
-13.2 MBytes   110 Mbits/sec    0    805 KBytes
-```
-
-### Ping Test:
-
-```
-64 bytes : icmp_seq=58 ttl=64 time=2.88 ms
-64 bytes : icmp_seq=59 ttl=64 time=3.00 ms
-64 bytes : icmp_seq=60 ttl=64 time=2.89 ms
-64 bytes : icmp_seq=61 ttl=64 time=3.12 ms
-64 bytes : icmp_seq=62 ttl=64 time=2.91 ms
-64 bytes : icmp_seq=63 ttl=64 time=2.95 ms
-64 bytes : icmp_seq=64 ttl=64 time=3.05 ms
-64 bytes : icmp_seq=65 ttl=64 time=2.78 ms
-64 bytes : icmp_seq=66 ttl=64 time=2.86 ms
-64 bytes : icmp_seq=67 ttl=64 time=2.83 ms
-
+Transfer      Bandwidth
+13.1 MBytes   109 Mbits/sec
+13.0 MBytes   109 Mbits/sec
+14.5 MBytes   121 Mbits/sec
+13.7 MBytes   115 Mbits/sec
+13.5 MBytes   113 Mbits/sec
+13.4 MBytes   113 Mbits/sec
+13.6 MBytes   114 Mbits/sec
+13.4 MBytes   113 Mbits/sec
+13.8 MBytes   115 Mbits/sec
+13.2 MBytes   110 Mbits/sec
 ```
 
 ### AP Mode (WiFi Hotspot Test):
