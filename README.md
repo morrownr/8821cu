@@ -30,8 +30,8 @@
 
 ### Supported Linux Distributions:
 
-- Ubuntu - https://linuxmint.com/
-- Mint - https://ubuntu.com/
+- Ubuntu - https://ubuntu.com/
+- Mint - https://linuxmint.com/
 
 ### Tested Linux Distributions:
 
@@ -77,15 +77,15 @@ In the terminal, create the folder to hold the driver file:
 $ mkdir src
 ```
 
-Get the latest version of the driver from: `https://github.com/morrownr/88x2bu`
+Get the latest version of the driver from: `https://github.com/morrownr/8821cu`
 
 Download the driver by clicking on the green `Code` button.
 
-Click on `Download ZIP` and save `8821cu-master.zip` in your `src` folder.
+Click on `Download ZIP` and save `8821cu-5.8.1.4.zip` in your `src` folder.
 
-Upzip `8821cu-master.zip`. A folder called `8821cu-master` should be created.
+Upzip `8821cu-5.8.1.4.zip`. A folder called `8821cu-5.8.1.4` should be created.
 
-Open a terminal and enter the folder called `8821cu-master`:
+Open a terminal and enter the folder called `8821cu-5.8.1.4`:
 
 ```
 $ cd ~/src/8821cu-master
