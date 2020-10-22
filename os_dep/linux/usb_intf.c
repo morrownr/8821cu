@@ -144,7 +144,7 @@ static struct usb_device_id rtw_usb_id_tbl[] = {
 	/*=== Realtek demoboard ===*/
 	{USB_DEVICE(USB_VENDER_ID_REALTEK, 0x8179), .driver_info = RTL8188E}, /* 8188EUS */
 	{USB_DEVICE(USB_VENDER_ID_REALTEK, 0x0179), .driver_info = RTL8188E}, /* 8188ETV */
-	/*=== Customer ID ===*/		
+	/*=== Customer ID ===*/
 #endif
 
 #ifdef CONFIG_RTL8812A
