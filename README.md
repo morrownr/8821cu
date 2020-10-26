@@ -35,7 +35,7 @@
 
 ### Tested Linux Distributions:
 
-- Ubuntu 20.10 Beta
+- Ubuntu 20.10
 - Mint 20
 - Ubuntu 20.04
 - Mint 19.3
