@@ -35,10 +35,10 @@
 
 ### Tested Linux Distributions:
 
-- Ubuntu 20.10
 - Mint 20
-- Ubuntu 20.04
 - Mint 19.3
+- Ubuntu 20.10
+- Ubuntu 20.04
 - Ubuntu 18.04
 
 ### Tested Hardware:
@@ -60,7 +60,7 @@ This driver can be installed using DKMS. DKMS is a system utility which will aut
 $ sudo apt-get install dkms
 ```
 
-Note: The installation of `dkms` in Mint or Ubuntu will result in the installation of the various development tools and required headers, if not previously installed, so no addition action is necessary on these distros.
+Note: The installation of `dkms` in Mint or Ubuntu will result in the installation of the various development tools and required headers, if not previously installed, so no additional action is necessary on these distros.
 
 ### Installation of the Driver:
 
@@ -106,22 +106,6 @@ $ sudo ./dkms-remove.sh
 ```
 ```
 $ sudo reboot
-```
-
-### iperf3 Test:
-
-```
-Transfer      Bandwidth
-13.1 MBytes   109 Mbits/sec
-13.0 MBytes   109 Mbits/sec
-14.5 MBytes   121 Mbits/sec
-13.7 MBytes   115 Mbits/sec
-13.5 MBytes   113 Mbits/sec
-13.4 MBytes   113 Mbits/sec
-13.6 MBytes   114 Mbits/sec
-13.4 MBytes   113 Mbits/sec
-13.8 MBytes   115 Mbits/sec
-13.2 MBytes   110 Mbits/sec
 ```
 
 ### AP Mode (WiFi Hotspot Test):
