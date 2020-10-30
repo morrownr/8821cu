@@ -16,6 +16,7 @@ if [[ "$RESULT" != "0" ]]; then
 	echo "An error occurred while running dkms remove"
 	exit $RESULT
 else
+	rm -f /etc/modprobe.d/8821cu.conf
 	rm -rf /usr/src/${DRV_NAME}-${DRV_VERSION}
 	echo "dkms-remove.sh was successful."
 fi

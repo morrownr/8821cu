@@ -23,6 +23,10 @@ echo ""
 echo "Copying driver to: /usr/src/${DRV_NAME}-${DRV_VERSION}"
 cp -r $(pwd) /usr/src/${DRV_NAME}-${DRV_VERSION}
 
+echo ""
+echo "Copying 8821cu.conf to: /etc/modprobe.d"
+cp -r 8821cu.conf /etc/modprobe.d
+
 dkms add -m ${DRV_NAME} -v ${DRV_VERSION}
 RESULT=$?
 

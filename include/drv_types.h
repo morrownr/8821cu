@@ -228,6 +228,9 @@ struct registry_priv {
 #ifdef CONFIG_NARROWBAND_SUPPORTING
 	u8	rtw_nb_config;
 #endif
+#ifdef CONFIG_SW_LED
+	u8	led_ctrl;
+#endif
 	u8	acm_method;
 	/* WMM */
 	u8	wmm_enable;
@@ -858,6 +861,7 @@ struct macid_ctl_t {
 	u8 op_num[H2C_MSR_ROLE_MAX]; /* number of macid having h2c_msr's OPMODE = 1 for specific ROLE */
 
 	struct sta_info *sta[MACID_NUM_SW_LIMIT]; /* corresponding stainfo when macid is not shared */
+
 	u8 macid_cap;
 	/* macid sleep registers */
 #ifdef CONFIG_PROTSEL_MACSLEEP
