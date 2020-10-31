@@ -52,6 +52,8 @@ This is a nano adapter that has impressed me with its ability to operate reliabl
 ### Supported Devices:
 
 * EDUP EP-1651
+* D-Link - DWA-171C
+* TOTOLINK A650UA v3
 * Numerous additional products that are based on the supported chipsets
 
 ### DKMS:
