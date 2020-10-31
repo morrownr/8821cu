@@ -166,4 +166,44 @@ Verify the mode has changed:
 $ sudo iw dev
 ```
 
+### Driver Options
+
+I have included a file called `8821cu.conf` that will be installed in `/etc/modeprob.d` by default.
+
+Location: `/etc/modprobe.d/8821cu.conf`
+
+To change driver options, you will need to edit `8821cu.conf` with a text editor.
+
+Example:
+```
+$ sudo nano /etc/modprobe.d/8821cu.conf
+```
+
+The options are as follows:
+
+
+Log level options: ( rtw_drv_log_level )
+```
+  0 = _DRV_NONE_ (default)
+  1 = _DRV_ALWAYS_
+  2 = _DRV_ERR_
+  3 = _DRV_WARNING_
+  4 = _DRV_INFO_
+  5 = _DRV_DEBUG_
+  6 = _DRV_MAX_
+```
+  Note: You can view RTW log entries by running the following in a terminal:
+  ```
+  $ sudo dmesg
+  ```
+
+
+LED control options: ( rtw_led_ctrl )
+```
+  0 = Always off
+  1 = Normal blink (default)
+  2 = Always on
+```
+
+
 ### Enjoy
