@@ -2426,7 +2426,7 @@ struct dvobj_priv *devobj_init(void)
 	pdvobj->tpt_mode = 0;
 	pdvobj->edca_be_ul = 0x5ea42b;
 	pdvobj->edca_be_dl = 0x00a42b;
-#endif 
+#endif
 	pdvobj->scan_deny = _FALSE;
 
 	return pdvobj;
@@ -3577,7 +3577,7 @@ int _netdev_open(struct net_device *pnetdev)
 	}
 	#endif /*CONFIG_AUTOSUSPEND*/
 
-	if (!rtw_is_hw_init_completed(padapter)) { // ips 
+	if (!rtw_is_hw_init_completed(padapter)) { // ips
 		rtw_clr_surprise_removed(padapter);
 		rtw_clr_drv_stopped(padapter);
 		RTW_ENABLE_FUNC(padapter, DF_RX_BIT);
@@ -3599,7 +3599,7 @@ int _netdev_open(struct net_device *pnetdev)
 		{
 	#ifdef CONFIG_BT_COEXIST_SOCKET_TRX
 			_adapter *prim_adpt = GET_PRIMARY_ADAPTER(padapter);
-		
+
 			if (prim_adpt && (_TRUE == prim_adpt->EEPROMBluetoothCoexist)) {
 				rtw_btcoex_init_socket(prim_adpt);
 				prim_adpt->coex_info.BtMgnt.ExtConfig.HCIExtensionVer = 0x04;
@@ -3631,7 +3631,7 @@ int _netdev_open(struct net_device *pnetdev)
 		rtw_cfg80211_init_wiphy(padapter);
 		rtw_cfg80211_init_wdev_data(padapter);
 		#endif
-		/* rtw_netif_carrier_on(pnetdev); */ /* call this func when rtw_joinbss_event_callback return success */
+		rtw_netif_carrier_on(pnetdev); /* call this func when rtw_joinbss_event_callback return success */
 		rtw_netif_wake_queue(pnetdev);
 
 		#ifdef CONFIG_BR_EXT
@@ -3763,7 +3763,7 @@ int _netdev_open(struct net_device *pnetdev)
 	rtw_set_pwr_state_check_timer(pwrctrlpriv);
 #endif
 
-	/* rtw_netif_carrier_on(pnetdev); */ /* call this func when rtw_joinbss_event_callback return success */
+	rtw_netif_carrier_on(pnetdev); /* call this func when rtw_joinbss_event_callback return success */
 	rtw_netif_wake_queue(pnetdev);
 
 #ifdef CONFIG_BR_EXT
@@ -3988,7 +3988,7 @@ int _pm_netdev_open(_adapter *padapter)
 	}
 	#endif /*CONFIG_AUTOSUSPEND*/
 
-	if (!rtw_is_hw_init_completed(padapter)) { // ips 
+	if (!rtw_is_hw_init_completed(padapter)) { // ips
 		rtw_clr_surprise_removed(padapter);
 		rtw_clr_drv_stopped(padapter);
 		status = rtw_hal_init(padapter);
@@ -5082,7 +5082,7 @@ int rtw_resume_process_wow(_adapter *padapter)
 		rtw_mi_start_drv_threads(padapter);
 
 		rtw_mi_intf_start(padapter);
-		
+
 		if(registry_par->suspend_type == FW_IPS_DISABLE_BBRF && !check_fwstate(pmlmepriv, _FW_LINKED)) {
 			if (!rtw_is_surprise_removed(padapter)) {
 				rtw_hal_deinit(padapter);
