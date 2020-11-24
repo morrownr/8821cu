@@ -3,6 +3,8 @@
 DRV_NAME=rtl8821cu
 DRV_VERSION=5.8.1.7
 
+echo ""
+
 if [ $EUID -ne 0 ]
 then
 	echo "You must run dkms-install.sh with superuser priviliges."
@@ -20,7 +22,7 @@ else
 fi
 
 echo ""
-echo "Copying driver to: /usr/src/${DRV_NAME}-${DRV_VERSION}"
+echo "Copying driver source files to: /usr/src/${DRV_NAME}-${DRV_VERSION}"
 cp -r $(pwd) /usr/src/${DRV_NAME}-${DRV_VERSION}
 
 echo ""
