@@ -53,7 +53,7 @@
 - EDUP EP-1651 WiFi Adapter 650 Mbps USB 2.0 Nano Adapter (AC650):
   https://www.amazon.com/gp/product/B0872VF2D8
 
-## Compatible Devices:
+### Compatible Devices:
 
 * EDUP EP-1651
 * D-Link - DWA-171C
