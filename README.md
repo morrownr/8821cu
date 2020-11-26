@@ -2,10 +2,10 @@
 
 ### Linux Driver for the RealTek RTL8811CU, RTL8821CU and RTL8731AU Chipsets.
 
-- Driver Version: v5.8.1.7 (Realtek)
+- Driver Version: v5.8.1.7 (Realtek) (2020-09-29)
 - Plus updates from the Linux community
 
-### Supported Features:
+### Features:
 
 - IEEE 802.11 b/g/n/ac WiFi compliant
 - 802.1x, WEP, WPA TKIP and WPA2 AES/Mixed mode for PSK and TLS (Radius)
@@ -23,7 +23,8 @@
 - Mesh
 - Wake on LAN
 - Monitor mode
-
+- Packet Injection (needs testing, please report results in `Issues`)
+-
 ### Compatible Kernels:
 
 - Kernels: 2.6.24 ~ 5.8 (Realtek)

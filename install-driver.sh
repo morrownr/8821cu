@@ -2,13 +2,13 @@
 
 DRV_NAME=rtl8821cu
 DRV_VERSION=5.8.1.7
-
-echo ""
+OPTIONS_FILE=8821cu.conf
+SCRIPT_NAME=install-driver.sh
 
 if [ $EUID -ne 0 ]
 then
-	echo "You must run dkms-install.sh with superuser priviliges."
-	echo "Try: \"sudo ./dkms-install.sh\""
+	echo "You must run ${SCRIPT_NAME} with superuser priviliges."
+	echo "Try: \"sudo ./${SCRIPT_NAME}\""
 	exit 1
 fi
 
@@ -21,13 +21,11 @@ else
 	exit 1
 fi
 
-echo ""
 echo "Copying driver source files to: /usr/src/${DRV_NAME}-${DRV_VERSION}"
 cp -r $(pwd) /usr/src/${DRV_NAME}-${DRV_VERSION}
 
-echo ""
-echo "Copying 8821cu.conf to: /etc/modprobe.d"
-cp -r 8821cu.conf /etc/modprobe.d
+echo "Copying ${OPTIONS_FILE} to: /etc/modprobe.d"
+cp -r ${OPTIONS_FILE} /etc/modprobe.d
 
 dkms add -m ${DRV_NAME} -v ${DRV_VERSION}
 RESULT=$?
