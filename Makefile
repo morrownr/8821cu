@@ -17,10 +17,10 @@ EXTRA_CFLAGS += -Wno-unused-function
 #EXTRA_CFLAGS += -Wno-vla
 #EXTRA_CFLAGS += -Wno-implicit-fallthrough
 
-GCC_VER_49 := $(shell echo `$(CC) -dumpversion | cut -f1-2 -d.` \>= 4.9 | bc )
-ifeq ($(GCC_VER_49),1)
-EXTRA_CFLAGS += -Wno-date-time	# Fix compile error && warning on gcc 4.9 and later
-endif
+#GCC_VER_49 := $(shell echo `$(CC) -dumpversion | cut -f1-2 -d.` \>= 4.9 | bc )
+#ifeq ($(GCC_VER_49),1)
+#EXTRA_CFLAGS += -Wno-date-time	# Fix compile error && warning on gcc 4.9 and later
+#endif
 
 EXTRA_CFLAGS += -I$(src)/include
 
@@ -1323,6 +1323,8 @@ INSTALL_PREFIX :=
 STAGINGMODDIR := /lib/modules/$(KVER)/kernel/drivers/staging
 endif
 
+### START RASPBERRY PI OS SUPPORT
+
 ifeq ($(CONFIG_PLATFORM_ARM_RPI), y)
 EXTRA_CFLAGS += -DCONFIG_LITTLE_ENDIAN
 EXTRA_CFLAGS += -DCONFIG_IOCTL_CFG80211 -DRTW_USE_CFG80211_STA_EVENT
@@ -1346,6 +1348,8 @@ KSRC := /lib/modules/$(KVER)/build
 MODDESTDIR := /lib/modules/$(KVER)/kernel/drivers/net/wireless/
 INSTALL_PREFIX :=
 endif
+
+### END RASPBERRY PI OS SUPPORT
 
 ifeq ($(CONFIG_PLATFORM_NV_TK1), y)
 EXTRA_CFLAGS += -DCONFIG_PLATFORM_NV_TK1

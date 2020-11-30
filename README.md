@@ -8,31 +8,33 @@
 ### Features:
 
 - IEEE 802.11 b/g/n/ac WiFi compliant
-- 802.1x, WEP, WPA TKIP and WPA2 AES/Mixed mode for PSK and TLS (Radius)
-- WPS - PIN and PBC Methods
-- IEEE 802.11b/g/n/ac Client mode
-- Wireless security for WEP, WPA TKIP, WPA2 AES PSK and WPA3-SAE Personal
-- Site survey scan and manual connect
-- WPA/WPA2 TLS client
-- Power saving mode
+
+- Supported Ciphers:
+	* WEP40 (00-0f-ac:1)
+	* WEP104 (00-0f-ac:5)
+	* TKIP (00-0f-ac:2)
+	* CCMP-128 (00-0f-ac:4)
+	* CMAC (00-0f-ac:6)
+
+- Supported interface modes:
+	* IBSS
+	* Managed
+	* AP (WiFi Hotspot) (Master mode)
+	* Monitor
+	* P2P-client
+	* P2P-GO
+
+- Log level control
 - LED control
-- AP Mode (WiFi Hotspot)
-- WiFi-Direct
-- Miracast
-- MU-MIMO
-- Mesh
-- Wake on LAN
-- Monitor mode
-- Packet Injection (needs testing, please report results in `Issues`)
--
+
 ### Compatible Kernels:
 
-- Kernels: 2.6.24 ~ 5.8 (Realtek)
+- Kernels: 2.6.24 - 5.8 (Realtek)
 - Kernels: 5.9
 
 ### Tested Linux Distributions:
 
-- Raspberry Pi OS (08-20-2020) (ARM 32 bit and ARM 64 bit)
+- Raspberry Pi OS (08-20-2020) (ARM 32 bit)
 
 - LMDE 4 (Linux Mint based on Debian)
 
