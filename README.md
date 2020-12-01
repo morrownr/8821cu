@@ -205,6 +205,21 @@ LED control options: ( rtw_led_ctrl )
   2 = Always on
 ```
 
+### iperf3 test results:
+```
+Bitrate
+-------------
+228 Mbits/sec
+234 Mbits/sec
+234 Mbits/sec
+231 Mbits/sec
+232 Mbits/sec
+234 Mbits/sec
+236 Mbits/sec
+226 Mbits/sec
+239 Mbits/sec
+```
+
 ### Entering Monitor Mode with 'iw' and 'ip':
 
 Start by making sure the system recognizes the Wi-Fi interface:
