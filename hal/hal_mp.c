@@ -1597,7 +1597,6 @@ s32 hal_mpt_SetThermalMeter(PADAPTER pAdapter, u8 target_ther)
 		return _FAIL;
 	}
 
-
 	target_ther &= 0xff;
 	if (target_ther < 0x07)
 		target_ther = 0x07;
