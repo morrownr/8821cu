@@ -52,13 +52,20 @@
 - Ubuntu - https://ubuntu.com/
 
 ### Tested Hardware:
-
-- EDUP EP-1651 WiFi Adapter 650 Mbps USB 2.0 Nano Adapter (AC650):
+```
+- EDUP EP-AC1651 USB WiFi Adapter AC650 Dual Band USB 2.0 Nano:
   https://www.amazon.com/gp/product/B0872VF2D8
+```
+```
+- EDUP EP-AC1635 USB WiFi Adapter AC600 DUAL BAND AC600 USB 2.0:
+  https://www.amazon.com/gp/product/B075R7BFV2
+  http://www.szedup.com/product-item/2017-new-model-802-11ac-dual-band-ac600-wireless-usb-adapter-network-card/
+```
 
 ### Compatible Devices:
 
-* EDUP EP-1651
+* EDUP EP-AC1651
+* EDUP EP-AC1635
 * D-Link - DWA-171C
 * TOTOLINK A650UA v3
 * Numerous additional products that are based on the supported chipsets
