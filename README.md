@@ -57,19 +57,24 @@
   https://www.amazon.com/gp/product/B0872VF2D8
 ```
 ```
-- EDUP EP-AC1635 USB WiFi Adapter AC600 DUAL BAND AC600 USB 2.0:
+- EDUP EP-AC1635 USB WiFi Adapter AC600 Dual Band USB 2.0:
   https://www.amazon.com/gp/product/B075R7BFV2
-  http://www.szedup.com/product-item/2017-new-model-802-11ac-dual-band-ac600-wireless-usb-adapter-network-card/
 ```
-
 ### Compatible Devices:
+```
+* BrosTrend 650Mbps Long Range Linux WiFi Adapter:
+  https://www.amazon.com/BrosTrend-600Mbps-Wireless-Internet-AC2/dp/B01GC8XH0S
 
 * EDUP EP-AC1651
-* EDUP EP-AC1635
-* D-Link - DWA-171C
-* TOTOLINK A650UA v3
-* Numerous additional products that are based on the supported chipsets
 
+* EDUP EP-AC1635
+
+* D-Link - DWA-171C
+
+* TOTOLINK A650UA v3
+
+* Numerous additional products that are based on the supported chipsets
+```
 ### Installation of the Driver:
 
 Note: The installation instructions that are provided are for the novice user. Experienced users are welcome to alter the installation to meet their needs.
