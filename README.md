@@ -2,7 +2,7 @@
 
 ### Linux Driver for the RealTek RTL8811CU, RTL8821CU and RTL8731AU Chipsets.
 
-- Driver Version: v5.8.1.7 (Realtek) (2020-09-29)
+- Driver: v5.8.1.7 (Realtek) (2020-09-29)
 - Plus updates from the Linux community
 
 ### Features:
@@ -31,7 +31,7 @@
 - Log level control
 - LED control
 - Power saving control
-- VHT Control ( to allow 80 MHz channel width in AP mode)
+- VHT control (allows 80 MHz channel width in AP mode)
 
 ### Compatible CPUs:
 
@@ -64,6 +64,15 @@
 
 ### Tested Hardware:
 ```
+- Cudy WU700 AC650 High Gain USB WiFi Adapter:
+  https://www.amazon.com/Cudy-WU700-650Mbps-Wireless-Compatible/dp/B07XXQVQH1
+```
+```
+BrosTrend 650Mbps Long Range Linux WiFi Adapter (Model #: AC5L):
+  https://www.amazon.com/BrosTrend-600Mbps-Wireless-Internet-AC2/dp/B01GC8XH0S
+
+```
+```
 - EDUP EP-AC1651 USB WiFi Adapter AC650 Dual Band USB 2.0 Nano:
   https://www.amazon.com/gp/product/B0872VF2D8
 ```
@@ -71,10 +80,12 @@
 - EDUP EP-AC1635 USB WiFi Adapter AC600 Dual Band USB 2.0:
   https://www.amazon.com/gp/product/B075R7BFV2
 ```
+
 ### Compatible Devices:
 ```
-* BrosTrend 650Mbps Long Range Linux WiFi Adapter (Model #: AC5L):
-  https://www.amazon.com/BrosTrend-600Mbps-Wireless-Internet-AC2/dp/B01GC8XH0S
+* BrosTrend AC5L
+
+* Cudy WU700
 
 * EDUP EP-AC1651
 
