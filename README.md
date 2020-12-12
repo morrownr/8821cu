@@ -70,7 +70,6 @@
 ```
 - BrosTrend 650Mbps Long Range Linux WiFi Adapter (Model #: AC5L):
   https://www.amazon.com/BrosTrend-600Mbps-Wireless-Internet-AC2/dp/B01GC8XH0S
-
 ```
 ```
 - EDUP EP-AC1651 USB WiFi Adapter AC650 Dual Band USB 2.0 Nano:
