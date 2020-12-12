@@ -68,7 +68,7 @@
   https://www.amazon.com/Cudy-WU700-650Mbps-Wireless-Compatible/dp/B07XXQVQH1
 ```
 ```
-BrosTrend 650Mbps Long Range Linux WiFi Adapter (Model #: AC5L):
+- BrosTrend 650Mbps Long Range Linux WiFi Adapter (Model #: AC5L):
   https://www.amazon.com/BrosTrend-600Mbps-Wireless-Internet-AC2/dp/B01GC8XH0S
 
 ```
@@ -83,9 +83,9 @@ BrosTrend 650Mbps Long Range Linux WiFi Adapter (Model #: AC5L):
 
 ### Compatible Devices:
 ```
-* BrosTrend AC5L
-
 * Cudy WU700
+
+* BrosTrend AC5L
 
 * EDUP EP-AC1651
 
