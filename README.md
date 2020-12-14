@@ -2,7 +2,7 @@
 
 ### Linux Driver for the RealTek RTL8811CU, RTL8821CU and RTL8731AU Chipsets.
 
-- Driver: v5.8.1.7 (Realtek) (2020-09-29)
+- v5.8.1.7 (Realtek) (2020-09-29)
 - Plus updates from the Linux community
 
 ### Features:
@@ -81,21 +81,17 @@
 ```
 
 ### Compatible Devices:
-```
+
+Note: Some adapter makers change the chipsets in their products while keeping the same model number so please check to confirm that the product you plan to buy has the chipset you are expecting.
+
 * Cudy WU700
-
 * BrosTrend AC5L
-
 * EDUP EP-AC1651
-
 * EDUP EP-AC1635
-
 * D-Link - DWA-171C
-
 * TOTOLINK A650UA v3
-
 * Numerous additional products that are based on the supported chipsets
-```
+
 ### Installation Information:
 
 The installation instructions that are provided are for the novice user. Experienced users are welcome to alter the installation to meet their needs.
@@ -176,8 +172,6 @@ Step 10: Reboot:
 ```
 $ sudo reboot
 ```
-Note: The installation is complete.
-
 
 ### Removal of the Driver:
 
@@ -258,22 +252,14 @@ The driver options are as follows:
 
  -----
 
- Notes:
- - To turn power saving off, set the two options below to 0.
- - These options may be useful in server setups and also if dropouts are experienced.
-
- Power saving options: ( rtw_power_mgnt )
+  Power saving options: ( rtw_power_mgnt )
 ```
  0 = Disable power saving
  1 = Power saving on, minPS (default)
  2 = Power saving on, maxPS
 ```
+ Note: 0 may be useful in unattended server setups or if dropouts are experienced.
 
- IPS mode options: ( rtw_ips_mode )
-```
- 0 = Low power
- 1 = High power (default)
-```
  -----
 
 ### Entering Monitor Mode with 'iw' and 'ip':
