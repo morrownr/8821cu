@@ -19,9 +19,9 @@ dkms remove ${DRV_NAME}/${DRV_VERSION} --all
 RESULT=$?
 
 if [[ "$RESULT" != "0" ]]; then
-	echo "An error occurred while running dkms remove : dkms return code: ${RESULT}"
+	echo "An error occurred while running: dkms remove : ${RESULT}"
 	exit $RESULT
 else
-	echo "The module has been removed successfully."
+	echo "The driver was removed successfully."
 	exit 0
 fi
