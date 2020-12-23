@@ -5,7 +5,7 @@ DRV_VERSION="5.8.1.7"
 OPTIONS_FILE="8821cu.conf"
 
 DRV_DIR="$(pwd)"
-KRNL_VERSION=$(uname -r)
+KRNL_VERSION="$(uname -r)"
 SCRIPT_NAME="install-driver.sh"
 
 if [[ $EUID -ne 0 ]]; then
