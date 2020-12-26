@@ -4,7 +4,7 @@ DRV_NAME="rtl8821cu"
 DRV_VERSION="5.8.1.7"
 OPTIONS_FILE="8821cu.conf"
 
-KRNL_VERSION=$(uname -r)
+KRNL_VERSION="$(uname -r)"
 SCRIPT_NAME="remove-driver.sh"
 
 if [[ $EUID -ne 0 ]]; then
