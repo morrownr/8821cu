@@ -194,12 +194,10 @@ Location: `/etc/modprobe.d/8821cu.conf`
 
 This file will be read and applied to the driver on each system boot.
 
-To change the driver options, there are two options:
+Here are two options to edit the driver options file:
 
-Option 1: Edit `8821cu.conf` with a text editor using a terminal interface.
-
-Example:
-```
+Option 1: Edit `8821cu.conf` with a text editor using a terminal interface:
+```bash
 $ sudo nano /etc/modprobe.d/8821cu.conf
 ```
 Option 2: From the driver directory, run the `./edit-options.sh` script:
