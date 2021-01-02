@@ -53,6 +53,8 @@
 
 - LMDE 4 (Linux Mint based on Debian) (kernel 4.19)
 
+- Manjaro 20.1 (kernel 5.9)
+
 - Ubuntu 20.10 (kernel 5.8)
 - Ubuntu 20.04 (kernel 5.4)
 - Ubuntu 18.04 (kernel 5.4)
@@ -63,6 +65,7 @@
 
 - Arch Linux - https://www.archlinux.org/
 - Linux Mint - https://www.linuxmint.com/
+- Manjaro - https://manjaro.org/
 - Raspberry Pi OS - https://www.raspberrypi.org/
 - Ubuntu - https://www.ubuntu.com/
 
@@ -114,7 +117,7 @@ Option for all Debian based distributions such as Ubuntu, Linux Mint and the Ras
 ```bash
 $ sudo apt-get update
 ```
-Option for Arch-based distributions (Manjaro):
+Option for Arch-based distributions such as Manjaro:
 ```bash
 $ sudo pacman -Syu
 ```
@@ -128,11 +131,11 @@ Option for LMDE (Debian based):
 ```bash
 $ sudo apt-get install -y linux-headers-$(uname -r) build-essential dkms git
 ```
-Option for Linux Mint (Ubuntu based) or Ubuntu (all flavors):
+Option for Linux Mint or Ubuntu (all flavors):
 ```bash
 $ sudo apt-get install -y dkms git
 ```
-Option for Arch-based distributions (Manjaro):
+Option for Arch-based distributions such as Manjaro:
 ```bash
 $ sudo pacman -S --noconfirm linux-headers dkms git
 ```
@@ -156,7 +159,7 @@ $ cd ~/src/8821cu
 ```
 Step 8: Run a preparation script if required:
 
-Note: The Raspberry Pi OS and other ARM based systens require a preparation script.
+Note: The Raspberry Pi OS and other ARM based systems require a preparation script.
 
 Option for 32 bit Raspberry Pi OS:
 ```bash
