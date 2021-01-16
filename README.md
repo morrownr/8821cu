@@ -160,14 +160,14 @@ Step 7: Move to the newly created driver directory
 ```bash
 $ cd ~/src/8821cu
 ```
-Step 8: Run a preparation script if required (The Raspberry Pi OS requires a preparation script)
+Step 8: Run a preparation script if required (Raspberry Pi *hardware* requires a preparation script)
 ```
-    Option for 32 bit Raspberry Pi OS:
+    Option for 32 bit operating systems to be installed to Raspberry Pi hardware
 
     $ sudo ./raspi32.sh
 ```
 ```
-    Option for 64 bit Raspberry Pi OS or 64 bit Ubuntu 20.10 for Raspberry Pi:
+    Option for 64 bit operating systems to be installed to Raspberry Pi hardware
 
     $ sudo ./raspi64.sh
 ```
