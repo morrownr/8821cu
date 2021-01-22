@@ -18,6 +18,10 @@ USB WiFi Adapter based on the rtl8811cu chipset
 
 Steps:
 
+Install the driver for the WiFi adapter.
+
+-----
+
 Optional: Disable Raspberry Pi onboard WiFi:
 
 $ sudo nano /boot/config.txt
