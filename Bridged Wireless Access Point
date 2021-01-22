@@ -1,0 +1,211 @@
+Bridged Wireless Access Point
+
+For wireless adapters based on the following chipsets:
+
+rtl8811cu
+rtl8821cu
+
+2021-01-22
+
+Tested setup:
+
+Raspberry Pi 4B (4gb)
+Raspberry Pi OS (2021-01-11) (32 bit)
+Driver: github.com/morrownr/8812au.git
+Onboard WiFi disabled
+Ethernet connection providing internet
+USB WiFi Adapter based on the rtl8811cu chipset
+
+Steps:
+
+Optional: Disable Raspberry Pi onboard WiFi:
+
+$ sudo nano /boot/config.txt
+
+Add:
+
+dtoverlay=disable-wifi
+
+-----
+
+Change driver options:
+
+$ sudo nano /etc/modprobe.d/8812au.conf
+
+rtw_vht_enable=2      (enable 80 Mhz channel width)
+
+-----
+
+Update system:
+
+$ sudo apt-get update
+
+-----
+
+Install needed packages:
+
+$ sudo apt install hostapd bridge-utils
+
+-----
+
+Reboot system:
+
+$ sudo reboot
+
+-----
+
+To ensure WiFi radio is not blocked:
+
+$ sudo rfkill unblock wlan
+
+-----
+
+Determine the names of the network interfaces:
+
+$ ip link show
+
+Note: The names of the ethernet and WiFi interfaces will need to replace eth0 and wlan0 if your system uses different names.
+
+-----
+
+$ sudo nano /etc/dhcpcd.conf
+
+Add near the beginning of the file:
+
+denyinterfaces eth0 wlan0
+
+-----
+
+$ sudo brctl addbr br0
+
+-----
+
+$ sudo nano /etc/network/interfaces
+
+Add:
+
+# Bridge setup
+auto br0
+iface br0 inet dhcp
+bridge_ports eth0 wlan0
+
+-----
+
+$ sudo nano /etc/hostapd/hostapd.conf
+
+Add:
+
+## hostapd.conf
+#
+## rtl8811cu USB WiFi Adapter
+## 5g, 80211ac, channel width 80, 434 Mb/s
+
+interface=wlan0
+bridge=br0
+driver=nl80211
+ctrl_interface=/var/run/hostapd
+ctrl_interface_group=0
+
+ssid=pi
+wpa_passphrase=raspberry
+
+country_code=US
+ieee80211d=1
+ieee80211h=1
+
+#2g
+#hw_mode=g
+#channel=7
+
+#5g
+hw_mode=a
+channel=36
+#channel=149
+
+macaddr_acl=0
+auth_algs=1
+ignore_broadcast_ssid=0
+wmm_enabled=1
+wpa=2
+wpa_key_mgmt=WPA-PSK
+#wpa_pairwise=TKIP
+rsn_pairwise=CCMP
+
+##### IEEE 802.11n related configuration #####
+ieee80211n=1
+# 8811cu
+ht_capab=[HT40+][SHORT-GI-20][SHORT-GI-40][MAX-AMSDU-7935][DSSS_CCK-40]
+
+##### IEEE 802.11ac related configuration #####
+ieee80211ac=1
+# 8811cu
+vht_capab=[MAX-A-MPDU-LEN-EXP3][MAX-MPDU-11454][SHORT-GI-80][HTC-VHT]
+
+vht_oper_chwidth=1
+vht_oper_centr_freq_seg0_idx=42
+#vht_oper_centr_freq_seg0_idx=155
+
+#
+## end of hostapd.conf
+
+-----
+
+$ sudo nano /etc/default/hostapd
+
+Add to bottom of file:
+
+DAEMON_CONF="/etc/hostapd/hostapd.conf"
+DAEMON_OPTS="-dd -t -f /home/pi/hostapd.log"
+
+-----
+
+$ sudo systemctl unmask hostapd
+
+-----
+
+$ sudo systemctl enable hostapd
+
+-----
+
+$ sudo reboot
+
+-----
+
+iperf3 results:
+
+$ iperf3 -c 192.168.1.40
+Connecting to host 192.168.1.40, port 5201
+[  5] local 192.168.1.9 port 33532 connected to 192.168.1.40 port 5201
+[ ID] Interval           Transfer     Bitrate         Retr  Cwnd
+[  5]   0.00-1.00   sec  29.8 MBytes   250 Mbits/sec    0    799 KBytes       
+[  5]   1.00-2.00   sec  30.0 MBytes   252 Mbits/sec    0    994 KBytes       
+[  5]   2.00-3.00   sec  28.8 MBytes   241 Mbits/sec    0    994 KBytes       
+[  5]   3.00-4.00   sec  31.2 MBytes   262 Mbits/sec    0    994 KBytes       
+[  5]   4.00-5.00   sec  30.0 MBytes   252 Mbits/sec    0    994 KBytes       
+[  5]   5.00-6.00   sec  31.2 MBytes   262 Mbits/sec    0   1.08 MBytes       
+[  5]   6.00-7.00   sec  27.5 MBytes   231 Mbits/sec    0   1.19 MBytes       
+[  5]   7.00-8.00   sec  30.0 MBytes   252 Mbits/sec    0   1.32 MBytes       
+[  5]   8.00-9.00   sec  28.8 MBytes   241 Mbits/sec    0   1.32 MBytes       
+[  5]   9.00-10.00  sec  28.8 MBytes   241 Mbits/sec    0   1.39 MBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate         Retr
+[  5]   0.00-10.00  sec   296 MBytes   248 Mbits/sec    0
+[  5]   0.00-10.02  sec   294 MBytes   246 Mbits/sec
+
+iperf Done.
+
+
+-----
+
+iwconfig results:
+
+$ iwconfig
+wlan0     IEEE 802.11AC  ESSID:"pi"
+          Mode:Managed  Frequency:5.18 GHz   
+          Bit Rate:434 Mb/s   Sensitivity:0/0  
+          Retry:off   RTS thr:off   Fragment thr:off
+          Link Quality=94/100  Signal level=-37 dBm  Noise level=0 dBm
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:0  Invalid misc:0   Missed beacon:0
+
+-----
