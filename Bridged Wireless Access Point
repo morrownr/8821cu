@@ -139,7 +139,7 @@ $ sudo rfkill unblock wlan
 
 $ sudo nano /etc/hostapd/hostapd.conf
 
-Add:
+File contents:
 
 ## hostapd.conf
 ## https://w1.fi/hostapd/
