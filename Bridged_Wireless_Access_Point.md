@@ -40,6 +40,10 @@ dtoverlay=disable-wifi
 
 $ sudo nano /etc/modprobe.d/8821cu.conf
 
+Note: You may try to use the following setting once you have a
+stable setup going but I consider it to be unstable on this
+device at this time.
+
 rtw_vht_enable=2      (enable 80 Mhz channel width)
 
 -----
@@ -185,9 +189,9 @@ ht_capab=[HT40+][SHORT-GI-20][SHORT-GI-40][MAX-AMSDU-7935]
 ##### IEEE 802.11ac related configuration #####
 ieee80211ac=1
 # 8811cu
-vht_capab=[MAX-A-MPDU-LEN-EXP3][MAX-MPDU-11454][SHORT-GI-80]
-vht_oper_chwidth=1
-vht_oper_centr_freq_seg0_idx=42
+vht_capab=[MAX-MPDU-11454][SHORT-GI-80]
+#vht_oper_chwidth=1
+#vht_oper_centr_freq_seg0_idx=42
 #vht_oper_centr_freq_seg0_idx=155
 
 #
@@ -215,28 +219,4 @@ $ sudo reboot
 16. Enjoy!
 
 -----
-
-iperf3 results:
-
-$ iperf3 -c 192.168.1.40
-Connecting to host 192.168.1.40, port 5201
-[  5] local 192.168.1.9 port 37866 connected to 192.168.1.40 port 5201
-[ ID] Interval           Transfer     Bitrate         Retr  Cwnd
-[  5]   0.00-1.00   sec  31.7 MBytes   266 Mbits/sec    0    682 KBytes       
-[  5]   1.00-2.00   sec  31.2 MBytes   262 Mbits/sec    0    814 KBytes       
-[  5]   2.00-3.00   sec  27.5 MBytes   231 Mbits/sec    0   1012 KBytes       
-[  5]   3.00-4.00   sec  30.0 MBytes   252 Mbits/sec    0   1.04 MBytes       
-[  5]   4.00-5.00   sec  28.8 MBytes   241 Mbits/sec    0   1.10 MBytes       
-[  5]   5.00-6.00   sec  30.0 MBytes   252 Mbits/sec    0   1.10 MBytes       
-[  5]   6.00-7.00   sec  31.2 MBytes   262 Mbits/sec    0   1.24 MBytes       
-[  5]   7.00-8.00   sec  30.0 MBytes   252 Mbits/sec    0   1.30 MBytes       
-[  5]   8.00-9.00   sec  31.2 MBytes   262 Mbits/sec    0   1.30 MBytes       
-[  5]   9.00-10.00  sec  31.2 MBytes   262 Mbits/sec    0   1.30 MBytes       
-- - - - - - - - - - - - - - - - - - - - - - - - -
-[ ID] Interval           Transfer     Bitrate         Retr
-[  5]   0.00-10.00  sec   303 MBytes   254 Mbits/sec    0
-[  5]   0.00-10.01  sec   300 MBytes   251 Mbits/sec
-
-iperf Done.
-
 
