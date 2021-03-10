@@ -4,7 +4,7 @@
 
 ### 8821cu ( 8821cu.ko ) :rocket:
 
-### Linux Driver for USB WiFi Adapters that use the RTL8811CU, RTL8821CU and RTL8731AU Chipsets
+### Linux Driver for USB WiFi Adapters that are based on the RTL8811CU, RTL8821CU and RTL8731AU Chipsets
 
 - v5.8.1.7 (Realtek) (2020-09-29)
 - Plus updates from the Linux community
@@ -13,7 +13,6 @@
 
 - IEEE 802.11 b/g/n/ac WiFi compliant
 - 802.1x, WEP, WPA TKIP and WPA2 AES/Mixed mode for PSK and TLS (Radius)
-- WPA3-SAE (Personal)
 - WPS - PIN and PBC Methods
 - IEEE 802.11b/g/n/ac Client mode
   * Support wireless security for WEP, WPA TKIP and WPA2 AES PSK
@@ -36,6 +35,12 @@
 - LED control
 - Power saving control
 - VHT control (allows 80 MHz channel width in AP mode)
+
+Note: WPA3-AES does not appear to be working. If you need a comparable adapter
+that does support WPA3-AES, I will suggest an Alfa AWUS036ACM. You can get more
+information and links about this adapter at the following site-
+
+https://github.com/morrownr/USB-WiFi
 
 ### Compatible CPUs
 
