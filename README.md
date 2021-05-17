@@ -17,20 +17,17 @@
 - IEEE 802.11b/g/n/ac Client mode
   * Support wireless security for WEP, WPA TKIP and WPA2 AES PSK
   * Support site survey scan and manual connect
-  * Support WPA/WPA2 TLS client
   * Support power saving mode
-- Soft AP mode
 - WiFi-Direct
-- MU-MIMO
-- Mesh
 - Wake on WLAN
 - Supported interface modes:
   * IBSS
   * Managed (client)
-  * AP
-  * Monitor
+  * AP (AP mode support is not good)
+  * Monitor (Monitor mode support is not good)
   * P2P-client
   * P2P-GO
+- Supported extended features: None
 - Log level control
 - LED control
 - Power saving control
@@ -106,6 +103,7 @@ https://github.com/morrownr/USB-WiFi
 * EDUP EP-AC1635
 * D-Link - DWA-171C
 * TOTOLINK A650UA v3
+* Mercusys MU6H
 * Numerous additional products that are based on the supported chipsets
 
 Warning: Beware of "multi-state" USB WiFi adapters. Some USB WiFi adapters have proprietary Windows drivers onboard. When plugged in, they act like a flash drive or CDROM and on Windows will attempt to start installing the Windows driver. That won't work on Linux or MAC or any other non-Windows OS so the adapter sits there in flash drive or CDROM mode. The problem is that the state of the adapter has to be changed for the adapter to show up as the device that you expect, in this case, a WiFi adapter. Most modern Linux distributions ship with a utility called "usb-modeswitch" that will handle this issue for you if it has the correct information for your adapter. It is a good utility but if you buy adapters that are "multi-state," that is one more potential headache you may have to deal with when something goes wrong. Often you can indentify adapters that are "multi-state" as they are advertised as "free driver" or "free installation driver." If you are looking to buy a USB WiFi adapter for use on Linux, MAC OS, *NIX or anything besides Windows, it is a good idea to seek out single-state adapters.
@@ -279,6 +277,13 @@ The driver options are as follows
 
 ### Removal of the Driver
 
+Note: This script should be used in the following situations:
+
+- the driver is no longer needed
+- a fresh start with default settings is needed
+- a new version of the driver needs to be installed
+- a major operating system upgrade is going to be applied
+
 Step 1: Open a terminal (Ctrl+Alt+T)
 
 Step 2: Move to the driver directory
@@ -293,7 +298,7 @@ Step 4: Reboot
 ```bash
 $ sudo reboot
 ```
-### Recommended Router Settings for WiFi
+### Recommended WiFi Router/ Access Point Settings
 
 Note: These are general recommendations, some of which may not apply to your specific situation.
 
@@ -303,13 +308,13 @@ Channel width for 2.4G: Set 20 MHz fixed width. Do not use 40 MHz or 20/40 autom
 
 Channels for 2.4G: Set channel 1 or 6 or 11 depending on the congestion at your location. Do not set automatic channel selection.
 
-Mode for 2.4G: Set "N only" if you no longer use B or G capable devices.
+Mode for 2.4G: For best performance, set "N only" if you no longer use B or G capable devices.
 
 Network names: Do not set the 2.4G Network and the 5G Network to the same name. Note: Unfortunately many routers come with both networks set to the same name.
 
-Channels for 5G: Not all devices are capable of using DFS channels. It may be necessary to set channel 36 or 149 fixed depending on the congestion at your location.
+Channels for 5G: Not all devices are capable of using DFS channels. It may be necessary to set a fixed channel in the range of 36 to 48 or 149 to 161 in order for all of your devices to work on 5g. (for US, other countries may vary)
 
-Best location for the router: Near center of apartment or house, at least a couple of feet away from walls, in an elevated location.
+Best location for the wifi router/ access point: Near center of apartment or house, at least a couple of feet away from walls, in an elevated location.
 
 Check congestion: There are apps available for smart phones that allow you to check the congestion levels on wifi channels. The apps generally go by the name of WiFi Analyzer or something similar.
 
@@ -344,9 +349,13 @@ REGDOMAIN=US
 
 ### Recommendations regarding USB
 
+- Moving your USB WiFi adapter to a different USB port has been known to fix a variety of problems. Problems include WiFi going on and off as well as connections coming and going.
+
 - If connecting your USB WiFi adapter to a desktop computer, use the USB ports on the rear of the computer. Why? The ports on the rear are directly connected to the motherboard which will reduce problems with interference and disconnection that can happen with front ports that use cables.
 
 - If your USB WiFi adapter is USB 3 capable then plug it into a USB 3 port.
+
+- Avoid USB 3.1 Gen 2 ports if possible as almost all currently available adapters have been tested with USB 3.1 Gen 1 (aka USB 3) and not with USB 3.1 Gen 2.
 
 - If you use an extension cable and your adapter is USB 3 capable, the cable needs to be USB 3 capable.
 
