@@ -13,13 +13,10 @@
 
 - IEEE 802.11 b/g/n/ac WiFi compliant
 - 802.1x, WEP, WPA TKIP and WPA2 AES/Mixed mode for PSK and TLS (Radius)
-- WPS - PIN and PBC Methods
 - IEEE 802.11b/g/n/ac Client mode
   * Support wireless security for WEP, WPA TKIP and WPA2 AES PSK
   * Support site survey scan and manual connect
   * Support power saving mode
-- WiFi-Direct
-- Wake on WLAN
 - Supported interface modes:
   * IBSS
   * Managed
@@ -27,7 +24,6 @@
   * Monitor (does not work well)
   * P2P-client
   * P2P-GO
-- Supported extended features: None
 - Log level control
 - LED control
 - Power saving control
@@ -44,7 +40,7 @@ these adapters at the following site:
 
 https://github.com/morrownr/USB-WiFi
 
-Question: What interface combination does this driver support?
+Question: What interface combinations does this driver support?
 
 Answer: None. Realtek out-of-kernel drivers, including this driver, do not
 support interface combinations. If you need support for interface combinations,
@@ -52,6 +48,14 @@ I suggest adapters based on the Mediatek mt7612u and mt7610u chipsets. You can
 get more information and links at the following site:
 
 https://github.com/morrownr/USB-WiFi
+
+Question: What extended features does this driver support?
+
+Answer: None. For extended features, you need an adapter that uses Mediatek
+drivers. You can get more information and links at the following site:
+
+https://github.com/morrownr/USB-WiFi
+
 
 Question: What is wrong with monitor mode?
 
@@ -206,12 +210,12 @@ Run a preparation script
 ```
     Option for 32 bit operating systems to be installed to Raspberry Pi hardware
 
-    $ sudo ./raspi32.sh
+    $ ./raspi32.sh
 ```
 ```
     Option for 64 bit operating systems to be installed to Raspberry Pi hardware
 
-    $ sudo ./raspi64.sh
+    $ ./raspi64.sh
 ```
 Step 9: Run the installation script (For automated builds - for example an RPM package or an image - use _NoPrompt_ as an option)
 ```bash
@@ -234,57 +238,7 @@ To edit the driver options file, run the `edit-options.sh` script.
 ```bash
 $ sudo ./edit-options.sh
 ```
-The driver options are as follows
-
- -----
-
- Log level options ( rtw_drv_log_level )
-```
- 0 = NONE (default)
- 1 = ALWAYS
- 2 = ERROR
- 3 = WARNING
- 4 = INFO
- 5 = DEBUG
- 6 = MAX
-```
- Note: You can save a log of RTW log entries by running the following in a terminal:
-
- $ sudo ./save-log.sh
-
- -----
-
- LED control options ( rtw_led_ctrl )
-```
- 0 = Always off
- 1 = Normal blink (default)
- 2 = Always on
-```
- -----
-
- VHT enable options ( rtw_vht_enable )
-```
-  0 = Disable
-  1 = Enable (default)
-  2 = Force auto enable (use caution)
-```
- Notes:
- - Unless you know what you are doing, don't change the default for rtw_vht_enable.
- - A non-default setting can degrade performance greatly in some operational modes.
- - For AP mode, such as when you are using Hostapd, setting this option to 2 will
-   allow 80 MHz channel width.
-
- -----
-
-  Power saving options ( rtw_power_mgnt )
-```
- 0 = Disable power saving
- 1 = Power saving on, minPS (default)
- 2 = Power saving on, maxPS
-```
- Note: Extensive testing has shown that the default setting works well.
-
- -----
+Documentation for Driver Options is included in the file `8821cu.conf`.
 
 ### Removal of the Driver
 
